@@ -6,8 +6,8 @@ public class Main {
 
             Scanner scanner = new Scanner(System.in);
 
-            double max = 0;
-            double min = 0;
+            double max = Double.MAX_VALUE;
+            double min = Double.MIN_VALUE;
 
             while (true) {
 

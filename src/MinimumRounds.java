@@ -4,7 +4,7 @@ import java.util.Map;
 public class MinimumRounds {
     public static void main(String[] args) {
         int[] a = {2,2,3,3,2,4,4,4,4,4};
-        minimumRounds(a);
+        System.out.println(minimumRounds(a));
     }
 
     public static int minimumRounds(int[] tasks){

@@ -4,29 +4,22 @@ import java.util.Set;
 public class LengthOfLongestSubString {
     public static void main(String[] args) {
         String s = "abcabcbb";
+        System.out.println(s);
         System.out.println(lengthOfLongestSubstring(s));
     }
 
     public static int lengthOfLongestSubstring(String s){
-        StringBuilder finale;
+        String finale;
         int length = 0;
-        char prev = Character.MIN_VALUE;
         for(int i = 0; i<s.length();i++){
-            finale = new StringBuilder();
-            char initial = s.charAt(i);
-            finale.append(initial);
-            for(int j = i+1;j<s.length();j++){
-                char check = s.charAt(j);
-                if(initial == check || prev == check){
-                    break;
-                }
-                finale.append(check);
-                prev = check;
-            }
-            if(finale.length()>length){
-                length = finale.length();
 
-            }
+                finale = s.substring(i);
+                if(Check(finale)){
+                    if(finale.length()>length){
+                        length = finale.length();
+                    }
+                }
+
 
         }
         return length;
@@ -50,5 +43,12 @@ public class LengthOfLongestSubString {
             }
         }
         return length;
+    }
+    public static boolean Check(String s ){
+        Set<Character> checker = new HashSet<>();
+        for(int i = 0; i<s.length();i++){
+            checker.add(s.charAt(i));
+        }
+        return s.length()==checker.size();
     }
 }

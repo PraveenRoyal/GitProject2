@@ -1,17 +1,15 @@
+import java.util.HashSet;
+
 public class ContainsDuplicate {
     public static void main(String[] args) {
 
     }
 
     public boolean containsDuplicate(int[] nums){
-        int a = 0;
-        for (int j : nums) {
-            for (int num : nums) {
-                if (j == num) {
-                    a++;
-                }
-            }
-        }
-        return a == nums.length;
+        HashSet<Integer> store = new HashSet<>();
+       for(int i : nums){
+           store.add(i);
+       }
+       return !(nums.length==store.size());
     }
 }
